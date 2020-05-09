@@ -1,0 +1,126 @@
+<meta charset="utf-8"/>
+<!doctype html>
+<html>
+<head>
+    <title>Jacqueimóveis</title>
+    <style>
+        body {
+        /* Location of the image */
+        background-image: url("imagens/dia1.jpg");
+        
+        /* Background image is centered vertically and horizontally at all times */
+        background-position: center center;
+        
+        /* Background image doesn't tile */
+        background-repeat: no-repeat;
+        
+        /* Background image is fixed in the viewport so that it doesn't move when 
+            the content's height is greater than the image's height */
+        background-attachment: fixed;
+        
+        /* This is what makes the background image rescale based
+            on the container's size */
+        background-size: cover;
+        
+        /* Set a background color that will be displayed
+            while the background image is loading */
+        background-color: #464646;
+
+        
+            display: grid;
+            align-items: center;
+            justify-content: center;
+            place-items: center; 
+
+            height: 100%;
+            margin: 0px;
+        }
+
+        .logo{
+            background-image:url("imagens/logo_branca.png");
+            background-position: center center;
+            background-repeat: no-repeat; 
+
+            width: 613px;
+            height: 134px;
+            margin: auto;
+            background-color: #46464686;
+            padding: 10px;
+            padding-right: 50px;
+            padding-left: 50px;
+            
+        }
+        
+        .logo.tema1{
+            background-image:url("imagens/logo_branca.png");
+            background-color: #aa242486;
+        }
+        
+        .logo.tema2{
+            background-image:url("imagens/logo_vermelha.png");
+            background-color: #46464686;
+        }
+        
+        .logo.tema3{
+            background-image:url("imagens/logo_vermelha.png");
+            background-color: #f7f7f786;
+        }
+
+        .temaFundo1{ background-image: url("imagens/dia2.jpg");}
+        
+        .temaFundo2{ background-image: url("imagens/dia3.jpg");}
+
+        .temaFundo3{ background-image: url("imagens/dia4.jpg"); }
+        
+        .temaFundo4{ background-image: url("imagens/noite1.jpg");}
+
+        .temaFundo5{ background-image: url("imagens/noite2.jpg"); }
+        
+        .temaFundo6{ background-image: url("imagens/noite3.jpg");}
+
+        .temaFundo7{ background-image: url("imagens/noite4.jpg"); }
+
+ssssssssssssssss
+
+
+
+    </style>
+</head>
+<body id="body" onclick="cliqueFundo()">
+    
+    <span id="logo" class="logo" onclick="cliqueLogo(event)"></span>
+
+    <script>
+        var temas = ["tema0","tema1","tema2","tema3"]
+        let i=0;
+        function cliqueLogo(e) {
+            var element = document.getElementById("logo");
+            element.classList.remove("tema0");
+            element.classList.remove("tema1");
+            element.classList.remove("tema2");
+            element.classList.remove("tema3");
+            element.classList.add(temas[++i]);
+            i= i%4;
+            e.stopPropagation();;
+        }
+
+        
+        var temasFundo = ["temaFundo0","temaFundo1","temaFundo2","temaFundo3",
+        "temaFundo4","temaFundo5","temaFundo6","temaFundo7"]
+        let i2=0;
+        function cliqueFundo() {
+            var element = document.getElementById("body");
+            element.classList.remove("temaFundo0");
+            element.classList.remove("temaFundo1");
+            element.classList.remove("temaFundo2");
+            element.classList.remove("temaFundo3");
+            element.classList.remove("temaFundo4");
+            element.classList.remove("temaFundo5");
+            element.classList.remove("temaFundo6");
+            element.classList.remove("temaFundo7");
+            element.classList.add(temasFundo[++i2]);
+            i2 = i2%8;
+        }
+        </script>
+</body>
+</html>
